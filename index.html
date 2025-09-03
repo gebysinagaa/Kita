@@ -3,37 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About You And Me</title>
-  <!-- Google Font kawaii -->
+  <title>Tentang Kita</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Canvas bintang -->
   <canvas id="stars"></canvas>
 
   <!-- Tombol mode siang/malam -->
   <button id="toggleMode" class="mode-btn">🌙</button>
 
-  <!-- HEADER -->
   <header>
     <h1>✨ Tentang Kita ✨</h1>
     <p>Setiap kenangan memiliki cerita tersendiri, dan setiap cerita memiliki makna</p>
   </header>
 
-  <!-- Musik latar autoplay dari link -->
   <audio autoplay loop controls class="backsound">
     <source src="https://files.catbox.moe/c4s5ry.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
 
-  <!-- Galeri foto selang-seling kanan kiri -->
+  <!-- Galeri -->
   <section class="gallery alternate" id="gallery">
     <div class="card polaroid">
       <span class="tape"></span>
-      <img src="https://files.catbox.moe/drqdvg.jpg" alt="foto kenangan">
-      <div class="caption" data-text="Pertama kali aku melihatmu secara langsung"></div>
+      <img src="images/foto1.jpg" alt="foto kenangan">
+      <div class="caption">Pertama kali aku melihatmu secara langsung</div>
     </div>
+
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="images/foto2.jpg" alt="foto kenangan">
+      <div class="caption">Valentine kalah ituu indah seperti kecantikanmu</div>
+    </div>
+
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="images/foto3.jpg" alt="foto kenangan">
+      <div class="caption">Semuanya tenang kalah saat kita bersama</div>
+    </div>
+
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="images/foto4.jpg" alt="foto kenangan">
+      <div class="caption">Bahkan dari belakang pun kamu tetap indah</div>
+    </div>
+
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="images/foto5.jpg" alt="foto kenangan">
+      <div class="caption">Kecantikanmu sungguh melekat pada dirimu</div>
+    </div>
+
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="images/foto6.jpg" alt="foto kenangan">
+      <div class="caption">Aku mencintaimu hari ini dan sampai kapanpun</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
     <div class="card polaroid">
       <span class="tape"></span>
