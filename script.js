@@ -1,39 +1,74 @@
-// === SEBAR FOTO DI PINGGIR ===
-const cards = document.querySelectorAll(".gallery.scattered .card");
-const gallery = document.getElementById("gallery");
-
-function scatterCards() {
-  const galleryHeight = gallery.clientHeight;
-  const galleryWidth = gallery.clientWidth;
-
-  cards.forEach((card, i) => {
-    let top, left;
-    const side = i % 4; // posisi pinggir
-
-    if (side === 0) {
-      top = 30;
-      left = Math.random() * (galleryWidth - 280);
-    } else if (side === 1) {
-      top = Math.random() * (galleryHeight - 240);
-      left = galleryWidth - 300;
-    } else if (side === 2) {
-      top = galleryHeight - 260;
-      left = Math.random() * (galleryWidth - 280);
-    } else {
-      top = Math.random() * (galleryHeight - 240);
-      left = 30;
-    }
-
-    const rotate = (Math.random() * 12 - 6) + "deg";
-    card.style.top = `${top}px`;
-    card.style.left = `${left}px`;
-    card.style.setProperty("--rotate", rotate);
-
-    setTimeout(() => {
+// ====== Tampilkan kartu selang-seling (animasi sederhana) ======
+const altCards = document.querySelectorAll(".gallery.alternate .card");
+function revealAlternate(){
+  altCards.forEach((card, i) => {
+    setTimeout(()=>{
       card.classList.add("show");
-      typeWriter(card.querySelector(".caption")); // caption animasi
-    }, i * 500);
+      const cap = card.querySelector(".caption");
+      if (cap) typeWriter(cap);
+    }, i * 300);
   });
+}
+window.addEventListener("load", revealAlternate);
+
+// ====== Toggle Day/Night ======
+const toggleBtn = document.getElementById("toggleMode");
+if (toggleBtn){
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("day");
+    toggleBtn.textContent = document.body.classList.contains("day") ? "☀️" : "🌙";
+  });
+}
+
+// ====== Animasi ketik untuk caption ======
+function typeWriter(element) {
+  const text = element.getAttribute("data-text") || element.textContent || "";
+  let i = 0;
+  element.textContent = "";
+  function typing(){
+    if (i < text.length){
+      element.textContent += text.charAt(i);
+      i++;
+      requestAnimationFrame(typing);
+    }
+  }
+  typing();
+}
+
+// ====== Latar bintang ======
+const canvas = document.getElementById("stars");
+if (canvas){
+  const ctx = canvas.getContext("2d");
+  let stars = [];
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    createStars(120);
+  }
+  function createStars(n){
+    stars = Array.from({length:n}, ()=>({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      r: Math.random()*1.5,
+      a: Math.random(),
+      s: Math.random()*0.02+0.005
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for (const st of stars){
+      st.a += st.s;
+      if (st.a > 1){ st.a = 0; st.x=Math.random()*canvas.width; st.y=Math.random()*canvas.height; }
+      ctx.beginPath();
+      ctx.arc(st.x, st.y, st.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(255,255,255,${st.a})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener("resize", resize);
+  resize(); draw();
+}
 }
 
 window.addEventListener("load", scatterCards);
