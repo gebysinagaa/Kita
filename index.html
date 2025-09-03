@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About You And Me</title>
+  <!-- Google Font kawaii -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas bintang -->
+  <canvas id="stars"></canvas>
+
+  <!-- Tombol mode siang/malam -->
+  <button id="toggleMode" class="mode-btn">🌙</button>
+
+  <!-- HEADER -->
+  <header>
+    <h1>✨ Tentang Kita ✨</h1>
+    <p>Setiap kenangan memiliki cerita tersendiri, dan setiap cerita memiliki makna</p>
+  </header>
+
+ <!-- Musik latar autoplay dari link -->
+<audio autoplay loop controls class="backsound">
+  <source src="https://files.catbox.moe/c4s5ry.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+
+  <!-- Galeri foto -->
+  <section class="gallery scattered" id="gallery">
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/drqdvg.jpg?random=1" alt="foto kenangan">
+      <div class="caption" data-text="Pertama kali aku melihatmu secara langsung"></div>
+    </div>
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/78gch5.jpg?random=2" alt="foto kenangan">
+      <div class="caption" data-text="Valentine kalah ituu indah seperti kecantikanmu"></div>
+    </div>
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/nhidsh.jpg?random=3" alt="foto kenangan">
+      <div class="caption" data-text="Semuanya tenang kalah saat kita bersama"></div>
+    </div>
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/szqjov.jpg?random=4" alt="foto kenangan">
+      <div class="caption" data-text="Bahkan dari belakang pun kamu tetap indah"></div>
+    </div>
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/wgl58e.jpg?random=5" alt="foto kenangan">
+      <div class="caption" data-text="Kecantikanmu sungguh melekat pada dirimu"></div>
+    </div>
+    <div class="card polaroid">
+      <span class="tape"></span>
+      <img src="https://files.catbox.moe/8k6rl2.jpg?random=6" alt="foto kenangan">
+      <div class="caption" data-text="Aku mencintaimu hari ini dan sampai kapanpun"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
