@@ -12,14 +12,19 @@
   <button id="toggleMode" class="mode-btn">🌙</button>
 
   <header>
-    <h1>✨ Tentang Kita ✨</h1>
+    <div class="title-box">
+      <h1>✨ Tentang Kita ✨</h1>
+    </div>
     <p>Setiap kenangan memiliki cerita tersendiri, dan setiap cerita memiliki makna</p>
   </header>
 
-  <audio autoplay loop controls class="backsound">
+  <audio id="backsound" autoplay loop>
     <source src="https://files.catbox.moe/c4s5ry.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
+
+  <!-- Tombol musik 🎀 -->
+  <button id="musicBtn" class="music-btn">🎀</button>
 
   <section class="gallery alternate" id="gallery">
     <div class="card polaroid">
@@ -61,4 +66,5 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+    </html>
+      
