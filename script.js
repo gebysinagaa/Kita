@@ -44,14 +44,19 @@ const music = document.getElementById("backsound");
 const musicBtn = document.getElementById("musicBtn");
 let isPlaying = true;
 
+// tambahkan glow saat play
+musicBtn.classList.add("glow");
+
 musicBtn.addEventListener("click", ()=>{
   if(isPlaying){
     music.pause();
     musicBtn.style.opacity = "0.6"; 
+    musicBtn.classList.remove("glow");
   } else {
     music.play();
     musicBtn.style.opacity = "1";
+    musicBtn.classList.add("glow");
   }
   isPlaying = !isPlaying;
 });
-      
+    
