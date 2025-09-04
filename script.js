@@ -39,7 +39,7 @@ function animateStars(){
 window.addEventListener("resize",resizeCanvas);
 resizeCanvas(); animateStars();
 
-// === Musik kontrol tombol 🎀 ===
+// === Musik kontrol kupu-kupu ===
 const music = document.getElementById("backsound");
 const musicBtn = document.getElementById("musicBtn");
 let isPlaying = true;
@@ -47,11 +47,11 @@ let isPlaying = true;
 musicBtn.addEventListener("click", ()=>{
   if(isPlaying){
     music.pause();
-    musicBtn.style.opacity = "0.6"; // efek kalau pause
+    musicBtn.style.opacity = "0.6"; 
   } else {
     music.play();
     musicBtn.style.opacity = "1";
   }
   isPlaying = !isPlaying;
 });
-    
+      
