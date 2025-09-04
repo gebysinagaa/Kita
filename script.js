@@ -38,3 +38,20 @@ function animateStars(){
 }
 window.addEventListener("resize",resizeCanvas);
 resizeCanvas(); animateStars();
+
+// === Musik kontrol tombol 🎀 ===
+const music = document.getElementById("backsound");
+const musicBtn = document.getElementById("musicBtn");
+let isPlaying = true;
+
+musicBtn.addEventListener("click", ()=>{
+  if(isPlaying){
+    music.pause();
+    musicBtn.style.opacity = "0.6"; // efek kalau pause
+  } else {
+    music.play();
+    musicBtn.style.opacity = "1";
+  }
+  isPlaying = !isPlaying;
+});
+    
