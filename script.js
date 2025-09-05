@@ -57,9 +57,10 @@ function animateStars(){
 window.addEventListener("resize",resizeCanvas);
 resizeCanvas(); animateStars();
 
-// === Musik kontrol ===
+// === Musik kontrol kupu-kupu ===
 const music = document.getElementById("backsound");
 const musicBtn = document.getElementById("musicBtn");
+const musicImg = musicBtn.querySelector('img');
 let isPlaying = true;
 
 musicBtn.addEventListener("click", ()=>{
@@ -67,12 +68,13 @@ musicBtn.addEventListener("click", ()=>{
     music.pause();
     musicBtn.style.opacity = "0.6"; 
     musicBtn.classList.remove("glow");
-    musicBtn.textContent = "⏸️";
+    // Optional: Bisa tambahkan efek grayscale saat pause
+    musicImg.style.filter = "grayscale(70%)";
   } else {
     music.play();
     musicBtn.style.opacity = "1";
     musicBtn.classList.add("glow");
-    musicBtn.textContent = "🎵";
+    musicImg.style.filter = "none";
   }
   isPlaying = !isPlaying;
 });
