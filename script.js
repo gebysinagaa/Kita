@@ -5,6 +5,24 @@ btn.addEventListener("click", ()=>{
   btn.textContent = document.body.classList.contains("day") ? "☀️" : "🌙";
 });
 
+// Tab navigation
+const tabBtns = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('.content-section');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetTab = btn.dataset.tab;
+    
+    // Remove active from all
+    tabBtns.forEach(b => b.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    
+    // Add active to clicked
+    btn.classList.add('active');
+    document.getElementById(targetTab).classList.add('active');
+  });
+});
+
 // Latar bintang
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
@@ -39,24 +57,73 @@ function animateStars(){
 window.addEventListener("resize",resizeCanvas);
 resizeCanvas(); animateStars();
 
-// === Musik kontrol kupu-kupu ===
+// === Musik kontrol ===
 const music = document.getElementById("backsound");
 const musicBtn = document.getElementById("musicBtn");
 let isPlaying = true;
-
-// tambahkan glow saat play
-musicBtn.classList.add("glow");
 
 musicBtn.addEventListener("click", ()=>{
   if(isPlaying){
     music.pause();
     musicBtn.style.opacity = "0.6"; 
     musicBtn.classList.remove("glow");
+    musicBtn.textContent = "⏸️";
   } else {
     music.play();
     musicBtn.style.opacity = "1";
     musicBtn.classList.add("glow");
+    musicBtn.textContent = "🎵";
   }
   isPlaying = !isPlaying;
 });
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observe scrapbook pages for scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.scrapbook-page').forEach(page => {
+    page.style.opacity = '0';
+    page.style.transform = 'translateY(30px)';
+    page.style.transition = 'all 0.6s ease';
+    observer.observe(page);
+  });
+});
+
+// Enhanced interactivity
+document.addEventListener('DOMContentLoaded', () => {
+  // Add hover effects to gallery cards
+  const cards = document.querySelectorAll('.gallery .card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'scale(1.02) rotate(1deg)';
+    });
     
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'scale(1) rotate(0deg)';
+    });
+  });
+  
+  // Add click effects to highlights
+  const highlights = document.querySelectorAll('.highlight');
+  highlights.forEach(highlight => {
+    highlight.addEventListener('click', () => {
+      highlight.style.backgroundColor = 'rgba(255, 105, 180, 0.3)';
+      setTimeout(() => {
+        highlight.style.backgroundColor = '';
+      }, 300);
+    });
+  });
+});
