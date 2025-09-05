@@ -239,13 +239,13 @@ header{padding:20px 16px 8px; text-align:center;}
   font-size: 24px;
 }
 .music-btn:hover {
-  transform: scale(1.15);
-  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(255, 105, 180, 0.4);
 }
 .music-btn.glow {
-  box-shadow: 0 0 15px rgba(255, 105, 180, 0.8),
-              0 0 25px rgba(255, 182, 193, 0.6),
-              0 0 40px rgba(255, 182, 193, 0.4);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.6),
+              0 0 20px rgba(255, 182, 193, 0.4),
+              0 0 30px rgba(255, 182, 193, 0.2);
   animation: pulse-glow 2s infinite ease-in-out;
 }
 
@@ -253,21 +253,21 @@ header{padding:20px 16px 8px; text-align:center;}
 @keyframes pulse-glow {
   0% { 
     transform: scale(1); 
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8),
-                0 0 25px rgba(255, 182, 193, 0.6),
-                0 0 40px rgba(255, 182, 193, 0.4);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.6),
+                0 0 20px rgba(255, 182, 193, 0.4),
+                0 0 30px rgba(255, 182, 193, 0.2);
   }
   50% { 
-    transform: scale(1.08); 
-    box-shadow: 0 0 18px rgba(255, 105, 180, 0.9),
-                0 0 28px rgba(255, 182, 193, 0.7),
-                0 0 45px rgba(255, 182, 193, 0.5);
+    transform: scale(1.05); 
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.7),
+                0 0 22px rgba(255, 182, 193, 0.5),
+                0 0 35px rgba(255, 182, 193, 0.3);
   }
   100% { 
     transform: scale(1); 
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8),
-                0 0 25px rgba(255, 182, 193, 0.6),
-                0 0 40px rgba(255, 182, 193, 0.4);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.6),
+                0 0 20px rgba(255, 182, 193, 0.4),
+                0 0 30px rgba(255, 182, 193, 0.2);
   }
 }
 
