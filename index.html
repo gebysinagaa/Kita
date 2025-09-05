@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kita</title>
+  <title>Tentang Kita - Our Journey</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,55 +19,139 @@
     <p>Setiap kenangan memiliki cerita tersendiri, dan setiap cerita memiliki makna</p>
   </header>
 
+  <nav class="nav-tabs">
+    <button class="tab-btn active" data-tab="gallery">📸 Gallery</button>
+    <button class="tab-btn" data-tab="scrapbook">📖 Our Story</button>
+    <button class="tab-btn" data-tab="timeline">⏰ Timeline</button>
+  </nav>
+
   <audio id="backsound" autoplay loop>
     <source src="https://files.catbox.moe/c4s5ry.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
 
-  <!-- Tombol musik kupu-kupu -->
-  <button id="musicBtn" class="music-btn">
-    <img src="kupukupu.jpeg" alt="play music">
-  </button>
+  <button id="musicBtn" class="music-btn glow">🎵</button>
 
-  <section class="gallery alternate" id="gallery">
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar1.jpg" alt="foto kenangan">
-      <div class="caption">Pertama kali aku melihatmu secara langsung</div>
+  <!-- Gallery Section -->
+  <section id="gallery" class="content-section active">
+    <div class="gallery alternate">
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar1.jpg" alt="foto kenangan">
+        <div class="caption">Pertama kali aku melihatmu secara langsung</div>
+      </div>
+
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar2.jpg" alt="foto kenangan">
+        <div class="caption">Valentine kalah ituu indah seperti kecantikanmu</div>
+      </div>
+
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar3.jpg" alt="foto kenangan">
+        <div class="caption">Semuanya tenang kalah saat kita bersama</div>
+      </div>
+
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar4.jpg" alt="foto kenangan">
+        <div class="caption">Bahkan dari belakang pun kamu tetap indah</div>
+      </div>
+
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar5.jpg" alt="foto kenangan">
+        <div class="caption">Kecantikanmu sungguh melekat pada dirimu</div>
+      </div>
+
+      <div class="card polaroid">
+        <span class="tape"></span>
+        <img src="gambar6.jpg" alt="foto kenangan">
+        <div class="caption">Aku mencintaimu hari ini dan sampai kapanpun</div>
+      </div>
     </div>
+  </section>
 
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar2.jpg" alt="foto kenangan">
-      <div class="caption">Valentine kalah ituu indah seperti kecantikanmu</div>
+  <!-- Digital Scrapbook Section -->
+  <section id="scrapbook" class="content-section">
+    <div class="scrapbook">
+      
+      <div class="scrapbook-page">
+        <div class="page-header">
+          <div class="page-number">1</div>
+          <div class="page-title">Ketika Dunia Hampir Runtuh</div>
+        </div>
+        <div class="story-content">
+          <p>Ada masa dimana <span class="highlight">aku hampir kehilanganmu</span>, ketika jarak memisahkan kita bukan hanya secara fisik, tapi juga hati. Hari-hari terasa seperti badai yang tak kunjung reda, dan setiap percakapan berakhir dengan air mata.</p>
+          
+          <div class="emotional-quote">"Aku takut... takut kehilanganmu selamanya"</div>
+          
+          <p>Malam itu, ketika kamu mengatakan mungkin kita harus <span class="highlight">mengambil jeda</span>, duniaku seolah berhenti berputar. Aku tahu kita berdua lelah dengan pertengkaran yang tak ada ujungnya, lelah dengan kesalahpahaman yang terus berulang.</p>
+          
+          <p>Tiga minggu kita tidak berbicara. Tiga minggu yang terasa seperti tiga tahun. Setiap malam aku menatap langit, berharap bintang-bintang bisa menyampaikan betapa aku merindukan tawamu, suaramu, bahkan cara kamu marah kepadaku.</p>
+        </div>
+      </div>
+
+      <div class="scrapbook-page">
+        <div class="page-header">
+          <div class="page-number">2</div>
+          <div class="page-title">Titik Balik</div>
+        </div>
+        <div class="story-content">
+          <p>Hujan deras malam itu, sama seperti air mata yang mengalir di pipiku ketika aku memutuskan untuk <span class="highlight">datang ke rumahmu</span>. Aku tidak peduli basah kuyup, yang penting kamu mendengar kata-kata yang sudah lama tertahan di dadaku.</p>
+          
+          <div class="emotional-quote">"Maafkan aku... aku tidak bisa hidup tanpamu"</div>
+          
+          <p>Ketika kamu membuka pintu dan melihatku berdiri di sana dengan pakaian basah dan mata sembab, ekspresi wajahmu berubah. Kemarahan perlahan berganti menjadi kekhawatiran, lalu... kasih sayang yang sama seperti dulu.</p>
+          
+          <p>Malam itu kita <span class="highlight">berbicara sampai subuh</span>. Membongkar semua yang salah, mengakui kesalahan masing-masing, dan berjanji untuk tidak mengulangi kesalahan yang sama. Kita menangis bersama, tertawa bersama, dan akhirnya... kembali bersama.</p>
+        </div>
+      </div>
+
+      <div class="scrapbook-page">
+        <div class="page-header">
+          <div class="page-number">3</div>
+          <div class="page-title">Membangun Kembali</div>
+        </div>
+        <div class="story-content">
+          <p>Setelah krisis itu, kita belajar bahwa <span class="highlight">cinta saja tidak cukup</span>. Kita butuh komunikasi yang lebih baik, pengertian yang lebih dalam, dan kesabaran yang tak terbatas satu sama lain.</p>
+          
+          <div class="emotional-quote">"Kita tidak sempurna, tapi cinta kita nyata"</div>
+          
+          <p>Perlahan, kepercayaan mulai terbangun kembali. Setiap hari adalah kesempatan untuk membuktikan bahwa kita berkomitmen untuk memperbaiki hubungan ini. Kita mulai lebih jujur tentang perasaan, lebih terbuka tentang kekhawatiran.</p>
+          
+          <p>Dan sekarang, ketika aku melihat kembali masa-masa kelam itu, aku bersyukur. Karena <span class="highlight">krisis itulah yang membuat kita lebih kuat</span>. Yang mengajarkan kita arti sesungguhnya dari commitment, forgiveness, dan unconditional love.</p>
+          
+          <p>Hari ini, kita masih bersama. Bukan karena kita sempurna, tapi karena kita memilih untuk terus berjuang bersama, apapun yang terjadi.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar3.jpg" alt="foto kenangan">
-      <div class="caption">Semuanya tenang kalah saat kita bersama</div>
-    </div>
-
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar4.jpg" alt="foto kenangan">
-      <div class="caption">Bahkan dari belakang pun kamu tetap indah</div>
-    </div>
-
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar5.jpg" alt="foto kenangan">
-      <div class="caption">Kecantikanmu sungguh melekat pada dirimu</div>
-    </div>
-
-    <div class="card polaroid">
-      <span class="tape"></span>
-      <img src="gambar6.jpg" alt="foto kenangan">
-      <div class="caption">Aku mencintaimu hari ini dan sampai kapanpun</div>
+  <!-- Timeline Section -->
+  <section id="timeline" class="content-section">
+    <div class="scrapbook">
+      <div class="scrapbook-page">
+        <div class="page-header">
+          <div class="page-number">📅</div>
+          <div class="page-title">Perjalanan Kita</div>
+        </div>
+        <div class="story-content">
+          <p><strong>Desember 2025:</strong> Pertemuan pertama yang tak terduga</p>
+          <p><strong>Februari 2025:</strong> Momen valentine yang berkesan</p>
+          <p><strong>Maret 2025:</strong> Kita masih hangat dan lucu seperti biasanya </p>
+          <p><strong>April 2025:</strong> Momen graduationmu dan disitu kita mulaii berantakan </p>
+          <p><strong>Juli 2025:</strong> Kita berdua keliling kala itu</p>
+          <p><strong>Hari ini:</strong> Masih bersama, walaupun berantakan kuharap kau tetap memilihku</p>
+          
+          <div class="emotional-quote">"Setiap hari bersamamu adalah kebahagiaan bagiku"</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <script src="script.js"></script>
 </body>
-        </html>
-        
+  </html>
